@@ -1,5 +1,5 @@
-resource ""aws_vpc" ""{
-    cidr_block="10.0.0.0/16"
+resource "aws_vpc" "vpc"{
+    cidr_block=var.vpc_cidr
     tags={
         name="test"
     }

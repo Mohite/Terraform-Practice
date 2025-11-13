@@ -21,10 +21,10 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
 
 resource "aws_lambda_function" "my_lambda" {
   function_name = "my_lambda_function"
-  role          =  aws_iam_role.lambda_role.arn
-  handler       = "lambda_function.lambda_handler"
-  runtime       = "python3.12"
-  timeout       = 900
+  role          =  aws_iam_role.lambda_role.arn # Attach the IAM role created above
+  handler       = "lambda_function.lambda_handler" # Specify the handler function
+  runtime       = "python3.12" # Specify the runtime environment
+  timeout       = 900  #15 minutes
   memory_size   = 128
 
   filename         = "lambda_function.zip"  # Ensure this file exists

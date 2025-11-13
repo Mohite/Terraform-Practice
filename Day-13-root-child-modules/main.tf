@@ -21,7 +21,7 @@ module "rds" {
   instance_class = "db.t3.micro"
   db_name        = "mydb"
   db_user        = "admin"
-  db_password    = "Admin12345"
+  db_password    = var.db_password
 }
 
 module "s3" {
